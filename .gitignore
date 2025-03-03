@@ -4,6 +4,8 @@
 .vscode/
 .idea/
 
+test-ledger/
+
 # Logs
 logs
 *.log
