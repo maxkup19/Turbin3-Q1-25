@@ -11,8 +11,8 @@ This repository contains various Solana blockchain projects developed during the
 - [Dice Game](./dice) - A gambling program with bet placement and resolution
 - [Anchor Marketplace](./anchor-marketplace) - NFT marketplace implementation
 - [Anchor Escrow](./anchor-escrow) - Escrow service for secure token exchanges
-- [Airdrop](./#airdrop) - Token airdrop distribution system
-- [Capstone Project](./capstone-project) - Final project with prediction markets
+- [Airdrop](./airdrop) - Token airdrop distribution system
+- [Capstone Project](./capstone) - Final project with prediction markets
 
 ### Learning Projects
 
