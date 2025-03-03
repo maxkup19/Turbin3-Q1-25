@@ -1,0 +1,32 @@
+@startuml
+!theme plain
+skinparam packageStyle rectangle
+
+package "Program Accounts" {
+    class Market {
+        + pubkey: PublicKey
+        + question: String
+        + expiresAt: i64
+        + yesAmount: u64
+        + noAmount: u64
+        + resolved: bool
+        + outcome: Option<bool>
+    }
+
+    class Position {
+        + owner: PublicKey
+        + market: PublicKey
+        + side: Side
+        + amount: u64
+    }
+
+    class UserState {
+        + owner: PublicKey
+        + positions: Vec<Position>
+        + totalStaked: u64
+    }
+}
+
+Market "1" *-- "many" Position : contains
+UserState "1" *-- "many" Position : owns
+@enduml

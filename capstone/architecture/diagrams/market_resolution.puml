@@ -1,0 +1,22 @@
+@startuml
+!theme plain
+actor Admin
+participant "Settlement Engine" as SE
+participant "Position Manager" as PM
+database "Market State" as MS
+database "Position State" as PS
+
+Admin -> SE : Resolve Market
+activate SE
+
+SE -> MS : Update Outcome
+SE -> PS : Get All Positions
+
+loop For each position
+    SE -> PM : Calculate Payout
+    PM -> PS : Update Position
+end
+
+SE --> Admin : Resolution Complete
+deactivate SE
+@enduml

@@ -1,0 +1,40 @@
+@startuml
+!theme plain
+skinparam componentStyle rectangle
+
+package "SolanaBets Protocol" {
+    [Market Program] as MP
+    [Position Manager] as PM
+    [Settlement Engine] as SE
+    database "Market State" as MS
+    database "Position State" as PS
+}
+
+actor User
+interface "Frontend UI" as UI
+interface "Admin Panel" as AP
+
+User --> UI
+UI --> MP : Create/Trade
+AP --> SE : Resolve Markets
+MP --> MS : Update State
+MP --> PM : Manage Positions
+PM --> PS : Track Positions
+SE --> MS : Update Outcome
+SE --> PS : Calculate Payouts
+
+note right of MP
+  Handles market creation
+  and trade execution
+end note
+
+note right of PM
+  Manages user positions
+  and order matching
+end note
+
+note right of SE
+  Handles market resolution
+  and winner payouts
+end note
+@enduml

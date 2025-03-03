@@ -1,0 +1,29 @@
+@startuml
+!theme plain
+actor User
+participant "Frontend" as FE
+participant "Market Program" as MP
+participant "Position Manager" as PM
+database "Market State" as MS
+database "Position State" as PS
+
+User -> FE : Place Trade
+activate FE
+
+FE -> MP : place_trade(side, amount)
+activate MP
+
+MP -> MS : Validate Market State
+MP -> PM : Create Position
+activate PM
+
+PM -> PS : Store Position
+PM --> MP : Position Created
+deactivate PM
+
+MP --> FE : Trade Confirmed
+deactivate MP
+
+FE --> User : Trade Success
+deactivate FE
+@enduml
