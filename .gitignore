@@ -1,6 +1,7 @@
 *-wallet.json
 
 #IDE
+.vscode/
 .idea/
 
 # Logs
