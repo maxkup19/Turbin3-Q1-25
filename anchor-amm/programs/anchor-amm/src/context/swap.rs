@@ -103,9 +103,7 @@ impl<'info> Swap<'info> {
 
         self.transfer_to_vault(args.clone(), res)?;
 
-        self.withdraw_from_vault(args, res2)?;
-
-        Ok(())
+        self.withdraw_from_vault(args, res2)
     }
 
     fn transfer_to_vault(&mut self, args: SwapArgs, res: SwapResult) -> Result<()> {

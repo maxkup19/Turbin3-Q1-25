@@ -9,11 +9,11 @@ pub enum AmmError {
     InvalidAmount,
     #[msg("AMM is Locked")]
     AMMLocked,
-    #[msg("Insufficien amount of token X")]
+    #[msg("Insufficient amount of token X")]
     InsufficientTokenX,
-    #[msg("Insufficien amount of token Y")]
+    #[msg("Insufficient amount of token Y")]
     InsufficientTokenY,
-    #[msg("Insufficien Balance")]
+    #[msg("Insufficient Balance")]
     InsufficientBalance,
 }
 

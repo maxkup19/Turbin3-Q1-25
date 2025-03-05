@@ -158,8 +158,6 @@ impl<'info> Deposit<'info> {
 
         let cpi_ctx = CpiContext::new_with_signer(cpi_program, cpi_accounts, signer_seeds);
 
-        mint_to(cpi_ctx, amount)?;
-
-        Ok(())
+        mint_to(cpi_ctx, amount)
     }
 }
